@@ -97,7 +97,7 @@ export default function Cart() {
               </button>
             </div>
           </div>
-          <p>Total Items={orders.length}</p>
+          {orders.length}
         </>
       ) : (
         <div>
