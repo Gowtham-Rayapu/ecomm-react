@@ -86,18 +86,18 @@ export default function Cart() {
                   );
                 }
               })}
-              {/* <tr><td colspan="3">Total Order Value</td><td className="Cart-order-value">{orderValue}</td></tr> */}
+              {/* {<tr><td colspan="3">Total Order Value</td><td className="Cart-order-value">{orderValue}</td></tr> } */}
             </table>
           </div>
           <div className="Cart-div-right">
             <div className="Cart-order-value">Order Value: ₹{orderValue}</div>
             <div className="Cart-order-value">
               <button onClick={submitOrder} className="Cart-place-order">
-                Submit Order
+                Proceed to Buy
               </button>
             </div>
           </div>
-          {orders.length}
+          <p>Total Items={orders.length}</p>
         </>
       ) : (
         <div>
