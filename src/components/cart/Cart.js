@@ -15,6 +15,7 @@ export default function Cart() {
   const { user } = useContext(UserContext);
   const [order, setOrder] = useState({});
   const [orderValue, setOrderValue] = useState(0);
+  const {flag,setFlag} = useContext(UserContext)
 
   useEffect(() => {
     setOrderValue((prev) =>
@@ -46,8 +47,8 @@ export default function Cart() {
         <>
           <div className="Cart-div-left">
             <table className="Cart-table">
-              <tr>
-                <th>Item</th>
+              <tr> 
+                <th>{Object.keys(cartItems).length >1? "Items" :"Item"}</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
@@ -92,9 +93,14 @@ export default function Cart() {
           <div className="Cart-div-right">
             <div className="Cart-order-value">Order Value: ₹{orderValue}</div>
             <div className="Cart-order-value">
+              {user ?  (
               <button onClick={submitOrder} className="Cart-place-order">
-                Proceed to Buy
-              </button>
+                submitOrder
+              </button>) :(
+              <button onClick={() => setFlag((prev) => 0)} className="Cart-place-order">
+              Proceed to buy
+            </button>)
+            }
             </div>
           </div>
           {orders.length}
