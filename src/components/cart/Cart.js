@@ -93,11 +93,11 @@ export default function Cart() {
           <div className="Cart-div-right">
             <div className="Cart-order-value">Order Value: ₹{orderValue}</div>
             <div className="Cart-order-value">
-              {user ?  (
+              {!user ?  (
               <button onClick={submitOrder} className="Cart-place-order">
                 submitOrder
               </button>) :(
-              <button onClick={() => setFlag((prev) => 0)} className="Cart-place-order">
+              <button onClick={() => setFlag(3)} className="Cart-place-order">
               Proceed to buy
             </button>)
             }
